@@ -1,0 +1,186 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+    /* 모든 브라우저에서 텍스트 선택 방지 */
+  -webkit-user-select: none; /* Chrome, Safari, Opera */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* 표준 속성 */
+}
+
+.ending-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.overlay-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%; 
+  max-width: 650px;
+  z-index: 10;
+}
+
+/* 텍스트 스타일 (새로 추가) */
+.click-prompt {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%); 
+  
+  color: rgb(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7); 
+  opacity: 0; 
+  transition: opacity 1s ease-in-out; 
+  z-index: 20;
+}
+
+/* 텍스트를 보이게 하는 클래스 */
+.click-prompt.visible {
+  opacity: 1;
+}
+
+
+/* 최종 이미지 스타일 */
+.final-story {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  
+  background-image: url('source_ending/ending_01.png');
+  background-size: cover;
+  background-position: center;
+  
+  z-index: 100;
+  
+  display: flex;
+  justify-content: center;
+  
+
+  align-items: flex-end;
+  
+
+  padding-bottom: 10px; 
+
+  box-sizing: border-box; 
+  transition: background-image 0.4s ease-in-out, opacity 1s ease-in-out;
+  
+  opacity: 0;
+  
+  pointer-events: none;
+
+}
+
+/* 요소를 숨기는 공통 클래스 */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* 불투명한 검은색 오버레이 스타일 */
+.final-story::before {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-color: rgba(0, 0, 0, 0.5);
+  
+  z-index: 1; /* 오버레이는 텍스트(2)보다 뒤에 위치 */
+}
+
+/* 중앙에 배치될 텍스트 스타일 */
+.final-story p {
+  position: relative;
+  z-index: 2; 
+  
+  color: white;
+  font-size: 3rem; /* 글자 크기 */
+  font-weight:600;
+  line-height: 1.4; /* 줄 간격 */
+  text-align: center;
+  
+  max-width: 1440px;
+  padding: 10px; 
+  
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); 
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0;
+
+  
+}
+
+.final-title-image {
+  position: absolute;
+
+  top: 80px; 
+  
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: 30%;
+  max-width: 450px;
+  
+  z-index: 2; 
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.final-stamp-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+
+  z-index: 10;
+
+  width: 55%;
+  max-width: 800px;
+  
+
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 0;
+  
+
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  
+
+  pointer-events: none;
+}
+
+
+.final-stamp-image.visible {
+
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.final-story.stamped::before {
+
+  background-color: rgba(0, 0, 0, 0.8);
+
+  transition: background-color 0.5s ease-in-out; 
+}
+
+.final-story.stamped p {
+
+  color: rgba(255, 255, 255, 0.2); 
+}

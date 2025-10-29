@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하지고등학교 살인사건</title>
+    <link rel="stylesheet" href="myStyle2.css">
+    <script src="myScript2.js" defer></script>
+</head>
+<body>
+  <section class="incident-briefing">
+    <img src="source_background/b_title.png" alt="사건 브리핑 제목">
+
+    <div class="briefing-text">
+      <p>
+        2025년 8월 14일 목요일 아침 7시, 하지고등학교 기숙사 401호 <br>
+        화장실 바닥에 쓰러진 채 죽어 있는 여학생이 발견된다.
+      </p>
+      <br>
+      <p>
+        피해자는 지난 1학기 기말고사에서 전교 2등을 한 하지고등학교 <br>
+        2학년 모범생 박수아. 약 150센치의 작은 키의 그녀는 <br>
+        발견 당시 칼로 난도질 당해 숨이 멎은 상태였다.
+      </p>
+      <br>
+      <p>
+        이 사건의 유력한 용의자는 5명.<br>
+        과연 이들 중 박수아를 살해한 범인은 누구인가?
+      </p>
+    </div>
+  </section>
+
+
+
+  <section class="suspect">
+      <img src="source_background/py_title.png" alt="피해자&용의자 제목">
+      <p class="section-instruction">모든 용의자 정보를 확인하고 다음으로 넘어가세요.</p> 
+
+
+    <div class="suspect-box-container">
+      <div class="suspect-box">
+        <div class="character-image-frame">
+            <img src="source_character/kim.png" alt="용의자 김여운">
+        </div>
+        <div class="character-info">
+          <span class="character-role">용의자┃</span>
+          <span class="character-name">김여운</span>
+        </div>
+      </div>
+
+      <div class="suspect-box victim"> 
+        <div class="character-image-frame">
+            <img src="source_character/park.png" alt="피해자 박수아">
+        </div>
+        <div class="character-info">
+          <span class="character-role">피해자┃</span>
+          <span class="character-name">박수아</span>
+        </div>
+      </div>
+
+      <div class="suspect-box">
+        <div class="character-image-frame">
+            <img src="source_character/sin.png" alt="용의자 신투수">
+        </div>
+        <div class="character-info">
+          <span class="character-role">용의자┃</span>
+          <span class="character-name">신투수</span>
+        </div>
+      </div>
+
+      <div class="suspect-box">
+        <div class="character-image-frame">
+            <img src="source_character/jang.png" alt="용의자 장일등">
+        </div>
+        <div class="character-info">
+          <span class="character-role">용의자┃</span>
+          <span class="character-name">장일등</span>
+        </div>
+      </div>
+
+      <div class="suspect-box">
+        <div class="character-image-frame">
+            <img src="source_character/na.png" alt="용의자 나토커">
+        </div>
+        <div class="character-info">
+          <span class="character-role">용의자┃</span>
+          <span class="character-name">나토커</span>
+        </div>
+      </div>
+
+      <div class="suspect-box">
+        <div class="character-image-frame">
+            <img src="source_character/moon.png" alt="용의자 문사감">
+        </div>
+        <div class="character-info">
+          <span class="character-role">용의자┃</span>
+          <span class="character-name">문사감</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="character-modal-overlay hidden">  
+  <div class="character-modal-content">      
+    <button class="character-modal-close">&times;</button> 
+    <div class="modal-character-info">
+     <img id="modal-img" src="" alt="캐릭터 이미지">
+     <div class="modal-text-content">
+       <h2 id="modal-title"></h2>
+       <p id="modal-summary"></p>
+       <div id="modal-details"></div>
+     </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <section class="evidence">
+      <img src="source_background/j_title.png" alt="증거 수집 제목">
+      <p class="section-instruction">장소를 수색하여 모든 증거를 수집한 후 다음으로 넘어가세요.</p>
+
+      <div class="evidence-box-container">
+        <div class="evidence-box room-kim" data-modal-target="#modal-kim"> 
+          <div class="text-wrapper">
+            <span class="room-number">401호</span>
+            <span class="room-name">김여운의 방</span>
+          </div>
+        </div>
+
+        <div class="evidence-box room-park" data-modal-target="#modal-park">
+          <div class="text-wrapper">
+            <span class="room-number">404호</span>
+            <span class="room-name">박수아의 방</span>
+          </div>
+        </div>
+
+        <div class="evidence-box room-jang" data-modal-target="#modal-jang">
+          <div class="text-wrapper">
+            <span class="room-number">408호</span>
+            <span class="room-name">장일등의 방</span>
+          </div>
+        </div>
+
+        <div class="evidence-box bottom-cut room-shin" data-modal-target="#modal-shin">
+          <div class="text-wrapper">
+            <span class="room-number">304호</span>
+            <span class="room-name">신투수의 방</span>
+          </div>
+        </div>
+
+        <div class="evidence-box bottom-cut room-na" data-modal-target="#modal-na">
+          <div class="text-wrapper">
+            <span class="room-number">108호</span>
+            <span class="room-name">나토커의 방</span>
+          </div>
+        </div>
+
+        <div class="evidence-box bottom-cut room-moon" data-modal-target="#modal-moon">
+          <div class="text-wrapper">
+            <span class="room-number">교무실</span>
+            <span class="room-name">문사감의 자리</span>
+          </div>
+        </div>
+    </div>
+  </section>
+
+    <div class="modal-overlay hidden" id="modal-kim" data-total-evidence="3">
+      <div class="modal-content">
+          <div class="evidence-counter">수집한 증거물 0 / 3</div>
+          <span class="modal-close-btn">&times;</span>
+          <img src="source_room_evidence/room/kimroom.png" alt="김여운의 방 상세 이미지" class="modal-image">
+
+          <div class="clickable-area" id="kim-door" data-scene-target="#scene-door"></div>
+      
+          <div class="clickable-area evidence-item" id="kim-phone" data-popup-target="#popup-phone"></div>
+          <div class="clickable-area evidence-item" id="kim-memo" data-popup-target="#popup-memo"></div>
+      </div>
+    </div>
+
+    <div class="scene-overlay hidden" id="scene-door">
+        <div class="scene-content">
+            <div class="evidence-counter">수집한 증거물 0 / 3</div>
+            <span class="scene-back-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
+                <path fill="white" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+              </svg>
+            </span>
+            <img src="source_room_evidence/room/kimbathroom.png" alt="화장실 상세 이미지" class="scene-image">
+            
+            <div class="clickable-area evidence-item" id="bath-mark" data-popup-target="#popup-mark"></div>
+        </div>
+    </div>
+
+    <div class="popup-overlay hidden" id="popup-mark">
+      <div class="popup-content">
+        <span class="popup-close-btn">&times;</span>
+        <h3 data-text="반원 표시">반원 표시</h3>
+        <img src="source_room_evidence/evidence/kimbath_circle.png" alt="반원 상세">
+        <p>박수아가 사망 직전 손으로 <br>
+          그리던 것으로 보인다. 반원이다. <br>
+          무엇을 의미하는 것일까? <br>
+          무언가를 쓰려다가 숨이 멎은 것일까? <br>
+        </p>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <div class="popup-overlay hidden" id="popup-phone">
+        <div class="popup-content">
+            <span class="popup-close-btn">&times;</span>
+            <h3 data-text="박수아의 핸드폰">박수아의 핸드폰</h3>
+            <img src="source_room_evidence/evidence/kim_daresua.png" alt="휴대폰 상세">
+            <p>사건 당시 김여운의 방을 사용했던 <br> 
+              박수아의 핸드폰을 발견했다. <br> 
+              별다른 특징은 없어보인다. <br> 
+              핸드폰의 사진첩을 둘러보다가 <br> 
+              중학생때로 보이는 사진을 발견했다. <br> 
+              옆에 있는 친구의 표정은 왜이렇게 <br>
+              안 좋아보이는 거지…
+        </div>
+    </div>
+
+     <div class="popup-overlay hidden" id="popup-memo">
+        <div class="popup-content">
+            <span class="popup-close-btn">&times;</span>
+            <h3 data-text="메모지">메모지</h3>
+            <img src="source_room_evidence/evidence/kim_memo.png" alt="휴대폰 상세">
+            <p>메모지 윗면을 연필로 긁어보니  <br> 
+              윗장에서 썼던 내용이 보인다.  <br> 
+              ‘이따 2시에 내 방으로 와줄 수 있어? - 여운’.  <br> 
+              이건… 김여운이 쓴 것일까?
+            </p>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay hidden" id="modal-park" data-total-evidence="2">
+      <div class="modal-content">
+          <div class="evidence-counter">수집한 증거물 0 / 2</div>
+          <span class="modal-close-btn">&times;</span>
+          <img src="source_room_evidence/room/parkroom.jpg" alt="박수아의 방 상세 이미지" class="modal-image">
+
+          <div class="clickable-area evidence-item" id="park-recipt" data-popup-target="#park-popup-group" data-slide-index="0"></div>
+          <div class="clickable-area evidence-item" id="park-choco" data-popup-target="#park-popup-group" data-slide-index="1"></div>
+          </div>
+    </div>
+
+    <div class="popup-group-overlay hidden" id="park-popup-group">
+        <div class="popup-slider">
+            <div class="popup-content" id="popup-recipt">
+                <span class="popup-close-btn">&times;</span>
+                <h3 data-text="버려진 영수증">버려진 영수증</h3>
+                <img src="source_room_evidence/evidence/park_recipt.png" alt="영수증 상세">
+                <p>칼을 구매한 기록이 남아있는 <br>
+                  영수증을 발견했다. <br>
+                  구매 날짜는 8월 12일 화요일이다. <br>
+                  어디에 쓰려고 했던걸까? <br>
+                  칼을 방에서 발견되지 않았다.
+                </p>
+            </div>
+            <div class="popup-content hidden" id="popup-choco">
+                <span class="popup-close-btn">&times;</span>
+                <h3 data-text="버려진 초콜릿">버려진 초콜릿</h3>
+                <img src="source_room_evidence/evidence/park_choco.png" alt="초콜릿 상세">
+                <p>나토커가 7시가 되기 조금 안 된 시간, <br>
+                  박수아 방문 앞에 뒀다고 하는 <br>
+                  초콜릿으로 보인다. <br>
+                  초콜릿과 함께 메모장이 발견됐다. <br>
+                  ‘12시에 방 앞에서 기다릴게!’. <br>
+                  이 메모는 무엇일까?
+                </p>
+            </div>
+          </div>
+          <button class="popup-nav-btn prev">&lt;</button>
+          <button class="popup-nav-btn next">&gt;</button>
+    </div>
+
+    <div class="modal-overlay hidden" id="modal-jang" data-total-evidence="1">
+      <div class="modal-content">
+          <div class="evidence-counter">수집한 증거물 0 / 1</div>
+          <span class="modal-close-btn">&times;</span>
+          <img src="source_room_evidence/room/jangroom.png" alt="장일등 방 상세 이미지" class="modal-image">
+
+          <div class="clickable-area evidence-item" id="jang-phone" data-popup-target="#popup-phonej"></div>
+      </div>
+    </div>
+
+    <div class="popup-overlay hidden" id="popup-phonej">
+        <div class="popup-content">
+            <span class="popup-close-btn">&times;</span>
+            <h3 data-text="장일등의 휴대폰">장일등의 휴대폰</h3>
+            <img src="source_room_evidence/evidence/jang_phone.png" alt="휴대폰 상세">
+            <p>장일등의 핸드폰을 둘러보았다. <br>
+              인스타그램 디엠 상단에 박수아와의 <br>
+              대화창이 있다. 대화창을 들어가보니 <br>
+              장일등이 보낸 내용은 없고 <br>
+              박수아가 보낸 내용만 남아있다. <br>
+              ‘이거 진짜야?’. <br>
+              박수아는 무엇을 보고 이렇게 말했던 것일까?
+            </p>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="modal-shin" data-total-evidence="2">
+      <div class="modal-content">
+          <div class="evidence-counter">수집한 증거물 0 / 2</div>
+          <span class="modal-close-btn">&times;</span>
+          <img src="source_room_evidence/room/sinroom.png" alt="신투수의 방 상세 이미지" class="modal-image">
+
+          <div class="clickable-area evidence-item" id="shin-note" data-popup-target="#popup-note"></div>
+          <div class="clickable-area evidence-item" id="shin-silbab" data-popup-target="#popup-silbab"></div>
+      </div>
+    </div>
+
+    <div class="popup-overlay hidden" id="popup-note">
+        <div class="popup-content">
+            <span class="popup-close-btn">&times;</span>
+            <h3 data-text="노트와 펜">노트와 펜</h3>
+            <img src="source_room_evidence/evidence/shin_note.png" alt="노트 상세">
+            <p>노트와 펜이 책상 위에 놓여있다. <br>
+              별다른 내용은 적혀있지 않다. <br>
+              특이한 점은 좌완투수인데 펜이 노트의 <br>
+              오른편에 있다는 점 정도이다. <br>
+              신투수는 오른손잡이인 걸까?
+            </p>
+        </div>
+    </div>
+
+    <div class="popup-overlay hidden" id="popup-silbab">
+        <div class="popup-content">
+            <span class="popup-close-btn">&times;</span>
+            <h3 data-text="흰색 실">흰색 실</h3>
+            <img src="source_room_evidence/evidence/sin_silbab.png" alt="노트 상세">
+            <p>창문 틈에서 흰색 실들이 발견되었다. <br>
+                주변을 둘러보니 바닥에서도 <br>
+                한 두개의 실을 발견할 수 있었다. <br>
+                정확히 무엇인지는 판단하기 어렵다.
+            </p>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="modal-na" data-total-evidence="3">
+      <div class="modal-content">
+          <div class="evidence-counter">수집한 증거물 0 / 3</div>
+          <span class="modal-close-btn">&times;</span>
+          <img src="source_room_evidence/room/naroom.png" alt="나토커의 방 상세 이미지" class="modal-image">
+
+          <div class="clickable-area evidence-item" id="na-drink" data-popup-target="#popup-drink"></div>
+          <div class="clickable-area evidence-item" id="na-pill" data-popup-target="#popup-pill"></div> 
+          <div class="clickable-area evidence-item" id="na-somae" data-popup-target="#popup-somae"></div> 
+      </div>
+    </div>
+
+    <div class="popup-overlay hidden" id="popup-drink">
+        <div class="popup-content">
+            <span class="popup-close-btn">&times;</span>
+            <h3 data-text="음료수">음료수</h3>
+            <img src="source_room_evidence/evidence/na_drink.png" alt="음료수 상세">
+            <p>책상 위에서 음료수가 발견되었다. <br>
+              발견 전날 박수아에게 주려다가 <br>
+              거절당한 음료수인 걸까? <br>
+              음료수 뚜껑은 한 번 딴 흔적은 있으나 <br>
+              음료수의 양은 가득 차있다. <br>
+              본인이 먹으려다가 말은 것일까?
+            </p>
+        </div>
+    </div>
+
+    <div class="popup-overlay hidden" id="popup-pill">
+        <div class="popup-content">
+            <span class="popup-close-btn">&times;</span>
+            <h3 data-text="버려진 수면제">버려진 수면제</h3>
+            <img src="source_room_evidence/evidence/na_pill.png" alt="수면제">
+            <p>쓰레기통에 버려진 수면제 약통을 발견했다.  <br>
+              나토커는 평소 불면증이 있는 걸까?
+            </p>
+        </div>
+    </div>
+
+    <div class="popup-overlay hidden" id="popup-somae">
+        <div class="popup-content">
+            <span class="popup-close-btn">&times;</span>
+            <h3 data-text="피 묻은 소매조각">피 묻은 소매조각</h3>
+            <img src="source_room_evidence/evidence/na_somae.png" alt="수면제">
+            <p>창문 밖을 살펴보다가 앞 뜰에서  <br>
+              피뭍은 소매조각을 발견했다.  <br>
+              나토커의 옷일까? <br>
+              중요한 증거물로 보인다.
+            </p>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="modal-moon" data-total-evidence="1">
+      <div class="modal-content">
+          <div class="evidence-counter">수집한 증거물 0 / 1</div>
+          <span class="modal-close-btn">&times;</span>
+          <img src="source_room_evidence/room/moonroom.png" alt="문사감의 방 상세 이미지" class="modal-image">
+          <div class="clickable-area evidence-item" id="moon_darae" data-popup-target="#popup-darae"></div> 
+      </div>
+    </div>
+
+    <div class="popup-overlay hidden" id="popup-darae">
+        <div class="popup-content">
+            <span class="popup-close-btn">&times;</span>
+            <h3 data-text="다정하게 찍은 사진">다정하게 찍은 사진</h3>
+            <img src="source_room_evidence/evidence/moon_darae.png" alt="사진">
+            <p>서랍 속에서 문사감이 누군가와 다정하게 <br>
+                찍은 사진을 발견했다. <br>
+                딸인 것일까? 사진의 뒷면을 보니 <br> 
+                ‘미안해…’라는 글이 쓰여있다. <br>
+                무슨 의미인 걸까?
+            </p>
+        </div>
+    </div>
+
+  </section>
+
+
+  <section class="suspect-interrogation">
+    <div class="interrogation-group">
+      <img src="source_ask/name_01.png" alt="용의자 신문">
+      <p class="section-instruction">용의자를 신문하여 모든 정보를 얻은 후 다음으로 넘어가세요.</p>
+      
+      <div class="character-lineup">
+        <div class="character-item" data-character="kim"></div>
+        <div class="character-item" data-character="sin"></div>
+        <div class="character-item" data-character="jang"></div>
+        <div class="character-item" data-character="na"></div>
+        <div class="character-item" data-character="moon"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="interrogation-modal hidden">
+    <div class="interrogation-content">
+        <button class="interrogation-close">&times;</button>
+        <img id="interrogation-character-img" src="" alt="신문 대상 캐릭터">
+        
+        <div id="dialogue-box">
+            <div id="dialogue-speaker"></div>
+            <div id="dialogue-text">
+                </div>
+        </div>
+    </div>
+  </div>
+
+  
+  
+  <section class="pick">
+  <img src="source_pick/name_02.png" alt="범인 지목 제목" class="pick-title">
+
+  <div class="suspect-grid">
+    
+    <div class="suspect-card" data-suspect="kim">
+      <img src="source_pick/kim_pick.png" alt="김여운" class="suspect-photo">
+      <img src="source_pick/stamp.png" alt="선택 스탬프" class="stamp-image">
+    </div>
+
+    <div class="suspect-card" data-suspect="shin">
+      <img src="source_pick/shin_pick.png" alt="신투수" class="suspect-photo">
+      <img src="source_pick/stamp.png" alt="선택 스탬프" class="stamp-image">
+    </div>
+
+    <div class="suspect-card" data-suspect="jang">
+      <img src="source_pick/jang_pick.png" alt="장일등" class="suspect-photo">
+      <img src="source_pick/stamp.png" alt="선택 스탬프" class="stamp-image">
+    </div>
+
+    <div class="suspect-card" data-suspect="na">
+      <img src="source_pick/na_pick.png" alt="나토커" class="suspect-photo">
+      <img src="source_pick/stamp.png" alt="선택 스탬프" class="stamp-image">
+    </div>
+
+    <div class="suspect-card" data-suspect="moon">
+      <img src="source_pick/moon_pick.png" alt="문사감" class="suspect-photo">
+      <img src="source_pick/stamp.png" alt="선택 스탬프" class="stamp-image">
+    </div>
+  </div>
+
+  <button class="confirm-button">지목 확정하기</button>
+
+</section>
+
+<script>
+  const suspectCards = document.querySelectorAll('.suspect-card');
+  const suspectGrid = document.querySelector('.suspect-grid');
+  const confirmButton = document.querySelector('.confirm-button');
+
+  suspectCards.forEach(clickedCard => {
+    clickedCard.addEventListener('click', () => {
+      
+      const isAlreadySelected = clickedCard.classList.contains('selected');
+
+      suspectCards.forEach(card => {
+        card.classList.remove('selected');
+      });
+
+      suspectGrid.classList.remove('selection-made');
+
+      if (!isAlreadySelected) {
+        clickedCard.classList.add('selected');
+        suspectGrid.classList.add('selection-made');
+      }
+    
+    });
+  });
+
+  // '지목 확정하기' 버튼
+  confirmButton.addEventListener('click', () => {
+    const selectedSuspect = document.querySelector('.suspect-card.selected');
+
+    if (!selectedSuspect) {
+      alert('범인을 먼저 선택해주세요!');
+      return;
+    }
+
+    const suspectId = selectedSuspect.dataset.suspect;
+    window.location.href = `ending.html?suspect=${suspectId}`;
+  });
+</script>
+
+
+</body>
+</html>

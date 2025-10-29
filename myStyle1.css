@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Story+Script&display=swap');
+
+/* 페이지 전체 기본 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000; /* 양옆 여백이 검정이라면 이렇게 */
+  color: #fff;
+  overflow: hidden;
+  min-width: 1440px;
+
+    /* 모든 브라우저에서 텍스트 선택 방지 */
+  -webkit-user-select: none; /* Chrome, Safari, Opera */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* 표준 속성 */
+}
+
+/* 실제 콘텐츠 영역은 1440px 안쪽으로 제한 */
+.content {
+  max-width: 1440px;
+  margin: 0 auto; /* 가운데 정렬 */
+  padding: 80px 20px; /* 양옆 약간의 여백 */
+}
+
+
+/* 1980px까지 꽉 차게 보이는 이미지 */
+.main-visual {
+  width: 100%;
+  height: 100vh; /* 화면 높이 꽉 채우기 */
+  min-width: 1440px; /* 최소 1440px 유지 */
+
+  background-image: url('source_background/m_background.png');
+  background-size: auto 110%;
+  background-position: center 80%; /* 맨 위로 정렬 */
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* 버튼을 하단 기준으로 */
+  overflow: hidden; /* 화면 밖 이미지 숨기기 */
+}
+
+
+/* 폴리스라인 초기 상태 */
+.police-line {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    scale: 1800%;
+    opacity: 0;
+    /* transform과 opacity 속성이 변할 때 애니메이션 적용 */
+    /* cubic-bezier는 '휙 들어와서 부드럽게 멈추는' 효과를 줍니다 */
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.7s;
+}
+
+/* 왼쪽 상단 폴리스라인: 최종 위치와 초기 transform 상태 설정 */
+.police-line.left {
+    top: 100px;
+    left: 300px;
+    /* 중요: 회전 후, 회전된 X축을 따라 왼쪽 밖으로 110% 이동시킴 */
+    transform: rotate(-25deg) translateX(110%);
+}
+
+/* 오른쪽 하단 폴리스라인: 최종 위치와 초기 transform 상태 설정 */
+.police-line.right {
+    bottom: 350px;
+    right: 50px;
+    /* 중요: 회전 후, 회전된 X축을 따라 오른쪽 밖으로 110% 이동시킴 */
+    transform: rotate(-20deg) translateX(110%);
+}
+
+/* 새로 추가될 왼쪽 상단 폴리스라인 */
+.police-line.left-top {
+    top: 100px;
+    left: 150px;
+    /* 기존(-25deg)보다 각도를 더 줘서 겹치게 만듭니다 */
+    transform: rotate(-8deg) translateX(-110%);
+}
+
+
+/* 활성화 상태: 왼쪽 라인이 제자리로 돌아옴 */
+.police-line.active.left {
+    opacity: 1;
+    transform: rotate(-25deg) translateX(0);
+}
+
+/* 활성화 상태: 오른쪽 라인이 제자리로 돌아옴 */
+.police-line.active.right {
+    opacity: 1;
+    transform: rotate(-20deg) translateX(0);
+}
+
+/* 활성화 상태: 제자리로 돌아옴 */
+.police-line.active.left-top {
+    opacity: 1;
+    transform: rotate(-8deg) translateX(0);
+}
+
+
+
+/* ENTER 버튼 스타일 */
+.enter-btn {
+ /* 버튼 크기 고정 */
+  width: 200px;   /* 원하는 고정 너비 */
+  height: 60px;   /* 원하는 고정 높이 */
+
+  padding-bottom: 3px;     /* 살짝 위로 올리기 */
+
+  font-size: 25px;
+  font-family: 'Noto Sans KR', sans-serif; /* 전체 기본 폰트 */
+  font-weight: 600;
+
+  color: white;
+  background-color: rgba(255, 0, 0, 0.5);
+  border: none; 
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  position: absolute;
+  bottom: 220px;  /* 화면 하단에서 절대값 위치 고정 */
+  
+  opacity: 0; /* << 추가: 처음엔 투명하게 */
+  /* transition에 opacity도 추가해서 부드러운 효과를 줍니다 */
+  transition: background-color 0.3s ease, color 0.3s ease, opacity 0.5s ease-in-out;
+}
+
+.enter-btn:hover {
+  background-color: rgb(212, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
